@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link rel="stylesheet" type="text/css" href="/styles.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Weather App</h1>
+
+      <form id="locationForm" method="post" action="/get-weather">
+        <label for="fname">Enter your city:</label>
+        <input type="text" id="city" name="city" />
+        <button type="submit">Get Weather</button>
+      </form>
+
+      <div class="weather-info" id="weatherInfo">
+        <h2>Tomorrow's Weather
+          <%- %>
+        </h2>
+
+        <p id="city">
+          City: <span id="cityName"> <%-city %>, <%-country %> </span>
+        </p>
+        <p id="temperature">
+          Temperature: <span id="tempValue"> <%-temperature %> </span>&deg;&copy;
+        </p>
+
+        <p id="main">Main: <span id="main"> <%-main %> </span></p>
+
+        <p id="description">
+          Description: <span id="descValue"> <%-description %> </span>
+        </p>
+
+        <p id="humidity">
+          Humidity: <span id="humidValue"> <%-humidity %> </span>%
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
